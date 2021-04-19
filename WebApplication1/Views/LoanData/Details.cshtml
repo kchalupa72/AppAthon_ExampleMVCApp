@@ -1,0 +1,54 @@
+﻿@model WebApplication1.Models.LoanData
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LoanData</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NameOfLoan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NameOfLoan)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoanAmount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoanAmount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoanTerm)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoanTerm)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.InterestRates)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InterestRates)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalCost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalCost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MonthlyBill)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MonthlyBill)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

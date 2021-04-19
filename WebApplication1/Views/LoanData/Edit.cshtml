@@ -1,0 +1,59 @@
+﻿@model WebApplication1.Models.LoanData
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>LoanData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NameOfLoan" class="control-label"></label>
+                <input asp-for="NameOfLoan" class="form-control" />
+                <span asp-validation-for="NameOfLoan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoanAmount" class="control-label"></label>
+                <input asp-for="LoanAmount" class="form-control" />
+                <span asp-validation-for="LoanAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoanTerm" class="control-label"></label>
+                <input asp-for="LoanTerm" class="form-control" />
+                <span asp-validation-for="LoanTerm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InterestRates" class="control-label"></label>
+                <input asp-for="InterestRates" class="form-control" />
+                <span asp-validation-for="InterestRates" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalCost" class="control-label"></label>
+                <input asp-for="TotalCost" class="form-control" disabled="disabled" />
+                <span asp-validation-for="TotalCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MonthlyBill" class="control-label"></label>
+                <input asp-for="MonthlyBill" class="form-control" disabled="disabled" />
+                <span asp-validation-for="MonthlyBill" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

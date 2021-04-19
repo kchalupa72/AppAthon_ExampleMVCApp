@@ -1,0 +1,27 @@
+﻿@model WebApplication1.Models.UserSelectedSort
+
+@{
+    ViewData["Title"] = "UserSortOptions";
+}
+
+
+<h1>UserSortOptions</h1>
+
+<p>
+    Create Your Own Results By Selecting How To Sort Your Report
+</p>
+
+<div>
+    <form asp-action="UserSortedOptionsResults">
+        @using (Html.BeginForm("LoanDataController", "UserSortedOptionsResults", FormMethod.Post))
+        {
+            @Html.DropDownListFor(x => x.Property, Model.GetPropertiesList())
+
+            @Html.DropDownListFor(x => x.SortOrder, Model.GetSortOrder())
+
+
+            <input type="submit" value="Submit" />
+            <a asp-action="Index">Back to List</a>
+        }
+    </form>
+</div>
